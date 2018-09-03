@@ -8,7 +8,14 @@ echo "<pre>";
     //print_r($customers_var);
     
 
-    print_r($customers_array);
+//print_r($customers_array);
+
+//$customer = $customers_array[0];
+
+//echo count ($customer->works);
+
+//print_r($customers_array);
+
 echo "</pre>";
     
     
@@ -49,6 +56,22 @@ echo "</pre>";
     $table.="</table>";    
     
     echo $table;
+    
+    
+    foreach ($customers_array as $customer){
+        
+        echo '<ul>';
+            echo '<li>'.$customer->customer_name;
+                
+                echo '<ul>';
+                        foreach ($customer->works as $work){
+                            echo '<li>'.$work->work_name.'</li>';
+                        }
+                echo '</ul>';
+                
+            echo'</li>';
+        echo '</ul>';
+    }
 
 ?>
 
